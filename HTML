@@ -1,0 +1,34 @@
+-
+  const COVERS = [
+    "https://i.imgur.com/321C0BL.jpg",
+    "https://i.imgur.com/0f0mdG3.jpg",
+    "https://i.imgur.com/ttHvreY.jpg",
+    "https://i.imgur.com/sR7EGDH.png",
+    "https://i.imgur.com/uWiv47J.jpg",
+    "https://i.imgur.com/mubdxlU.jpg",
+    "https://i.imgur.com/z3zXxKR.jpg",
+    "https://i.imgur.com/ze8Vm9M.png",
+    "https://i.imgur.com/YE5v5EX.jpg",
+    "https://i.imgur.com/KcfRhLc.jpg",
+  ]
+
+.boxes
+  - const COUNT = 10
+  - let b = 0
+  while b < COUNT
+    .box(style=`--src: url(${COVERS[b]})`)
+      span= b + 1
+      img(src=COVERS[b])
+    - b++
+  .controls
+    button.next
+      span Previous album
+      svg(viewBox="0 0 448 512" width="100" title="Previous Album")
+        path(d="M424.4 214.7L72.4 6.6C43.8-10.3 0 6.1 0 47.9V464c0 37.5 40.7 60.1 72.4 41.3l352-208c31.4-18.5 31.5-64.1 0-82.6z")
+    button.prev
+      span Next album
+      svg(viewBox="0 0 448 512" width="100" title="Next Album")
+        path(d="M424.4 214.7L72.4 6.6C43.8-10.3 0 6.1 0 47.9V464c0 37.5 40.7 60.1 72.4 41.3l352-208c31.4-18.5 31.5-64.1 0-82.6z")
+svg.scroll-icon(viewBox="0 0 24 24")
+  path(fill="currentColor" d="M20 6H23L19 2L15 6H18V18H15L19 22L23 18H20V6M9 3.09C11.83 3.57 14 6.04 14 9H9V3.09M14 11V15C14 18.3 11.3 21 8 21S2 18.3 2 15V11H14M7 9H2C2 6.04 4.17 3.57 7 3.09V9Z")
+.drag-proxy
